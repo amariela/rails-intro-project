@@ -1,7 +1,11 @@
 source "https://rubygems.org"
 
 # Faker data
-gem 'faker'
+gem "faker"
+
+# Bootstrap styling
+gem "bootstrap"
+gem "sassc-rails"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
