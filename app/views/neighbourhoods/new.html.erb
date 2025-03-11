@@ -1,0 +1,11 @@
+<% content_for :title, "New neighbourhood" %>
+
+<h1>New neighbourhood</h1>
+
+<%= render "form", neighbourhood: @neighbourhood %>
+
+<br>
+
+<div>
+  <%= link_to "Back to neighbourhoods", neighbourhoods_path %>
+</div>
