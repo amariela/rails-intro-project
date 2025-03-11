@@ -3,7 +3,11 @@ class ParksController < ApplicationController
 
   # GET /parks or /parks.json
   def index
-    @parks = Park.all
+    if params[:query].present?
+      @parks = Park.where("name LIKE ?", "%#{params[:query]}%")
+    else
+      @parks = Park.all
+    end
   end
 
   # GET /parks/1 or /parks/1.json
