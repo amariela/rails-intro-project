@@ -2,15 +2,29 @@
 
 <% content_for :title, "Contractors" %>
 
-<h4 class="bg-dark text-white">Contractors</h4>
-
-<div id="contractors">
-  <% @contractors.each do |contractor| %>
-    <%= render contractor %>
-    <p>
-      <%= link_to "Show this contractor", contractor %>
-    </p>
-  <% end %>
+<div class="row">
+    <div class="col my-auto">
+        <h4 class="bg-dark text-white">Contractors</h4>
+    </div>
+    <div class="col-2">
+        <%= link_to "New contractor", new_contractor_path, class: "btn btn-dark" %>
+    </div>
 </div>
+<table class="table table-striped" id="contractors">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @contractors.each do |contractor| %>
+        <tr>
+            <td><%= render contractor %></td>
+            <td><%= link_to "Show Details", contractor %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to "New contractor", new_contractor_path %>
+
