@@ -2,15 +2,29 @@
 
 <% content_for :title, "Neighbourhoods" %>
 
-<h4 class="bg-dark text-white">Neighbourhoods</h4>
-
-<div id="neighbourhoods">
-  <% @neighbourhoods.each do |neighbourhood| %>
-    <%= render neighbourhood %>
-    <p>
-      <%= link_to "Show this neighbourhood", neighbourhood %>
-    </p>
-  <% end %>
+<div class="row">
+    <div class="col my-auto">
+        <h4 class="bg-dark text-white">Neighbourhoods</h4>
+    </div>
+    <div class="col-2">
+        <%= link_to "New hood", new_neighbourhood_path, class: "btn btn-dark" %>
+    </div>
 </div>
+<table class="table table-striped" id="neighbourhoods">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @neighbourhoods.each do |neighbourhood| %>
+        <tr>
+            <td><%= render neighbourhood %></td>
+            <td><%= link_to "Show Details", neighbourhood %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to "New neighbourhood", new_neighbourhood_path %>
+
