@@ -12,6 +12,8 @@ class ParksController < ApplicationController
 
   # GET /parks/1 or /parks/1.json
   def show
+    @park = Park.find(params[:id])
+    @neighbourhood = @park.neighbourhood
   end
 
   # GET /parks/new

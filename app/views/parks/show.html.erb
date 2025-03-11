@@ -1,7 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @park %>
+<h3><%= render @park %></h3>
 
+<h5>
+    Found in Neighborhood: <%= link_to "#{@neighbourhood.name}", neighbourhood_path(@neighbourhood) %>
+</h5>
+<br>
 <div>
   <%= link_to "Edit this park", edit_park_path(@park) %> |
   <%= link_to "Back to parks", parks_path %>
