@@ -3,11 +3,14 @@ class BusinessesController < ApplicationController
 
   # GET /businesses or /businesses.json
   def index
-    @businesses = Business.all
+    @businesses = Business.order(:name)
   end
 
   # GET /businesses/1 or /businesses/1.json
   def show
+    @business = Business.find(params[:id])
+    @neighbourhood = @business.neighbourhood
+    @contractors = @business.contractors
   end
 
   # GET /businesses/new

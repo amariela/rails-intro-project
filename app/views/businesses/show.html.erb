@@ -1,8 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @business %>
+<h3><%= render @business %></h3>
+<p>Id: <%= @business.id %>  |  Created at: <%= @business.created_at %></p>
 
-
+<br>
+<h5>
+    Found in Neighborhood: <%= link_to "#{@neighbourhood.name}", neighbourhood_path(@neighbourhood) %>
+</h5>
+<br>
+<h5>
+    Contractors employed by this business: 
+</h5>
+<ul>
+    <% if @contractors.empty? %>
+        <li>Information not available publicly.</li>
+    <% else %>
+        <% @contractors.each do |contractor| %>
+        <li><%= link_to contractor.name, contractor_path(contractor) %></li>
+        <% end %>
+    <% end %>
+</ul>
+<br>
 <div>
   <%= link_to "Edit this business", edit_business_path(@business) %> |
   <%= link_to "Back to businesses", businesses_path %>
