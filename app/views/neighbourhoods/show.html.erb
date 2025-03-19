@@ -14,7 +14,7 @@
         <li>None found.</li>
     <% else %>
         <% @parks.each do |park| %>
-        <li><%= link_to park.name, park_path(park) %></li>
+        <li><%= link_to park.name, park_path(park) %> - Id: <%= park.id %> - Created at: <%= park.created_at %></li>
         <% end %>
     <% end %>
 </ul>
@@ -27,7 +27,7 @@
         <li>None found.</li>
     <% else %>
         <% @businesses.each do |business| %>
-        <li><%= link_to business.name, business_path(business) %></li>
+        <li><%= link_to business.name, business_path(business) %> - Id: <%= business.id %> - Created at: <%= business.created_at %></li>
         <% end %>
     <% end %>
 </ul>
@@ -41,7 +41,7 @@
         <li>None found.</li>
     <% else %>
         <% @contractors.each do |contractor| %>
-        <li><%= link_to contractor.full_name, contractor_path(contractor) %></li>
+        <li><%= link_to contractor.full_name, contractor_path(contractor) %> - Id: <%= contractor.id %> - Created at: <%= contractor.created_at %></li>
         <% end %>
     <% end %>
 </ul>
