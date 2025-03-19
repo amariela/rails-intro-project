@@ -3,11 +3,15 @@ class NeighbourhoodsController < ApplicationController
 
   # GET /neighbourhoods or /neighbourhoods.json
   def index
-    @neighbourhoods = Neighbourhood.all
+    @neighbourhoods = Neighbourhood.order(:name)
   end
 
   # GET /neighbourhoods/1 or /neighbourhoods/1.json
   def show
+    @neighbourhood = Neighbourhood.find(params[:id])
+    @parks = @neighbourhood.parks
+    @businesses = @neighbourhood.businesses
+    @contractors = @neighbourhood.contractors
   end
 
   # GET /neighbourhoods/new

@@ -1,6 +1,47 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @neighbourhood %>
+<h3><%= render @neighbourhood %></h3>
+
+<h5>
+    Parks in this neighbourhood: 
+</h5>
+<ul>
+    <% if @parks.empty? %>
+        <li>None found.</li>
+    <% else %>
+        <% @parks.each do |park| %>
+        <li><%= link_to park.name, park_path(park) %></li>
+        <% end %>
+    <% end %>
+</ul>
+<br>
+<h5>
+    Businesses in this neighbourhood: 
+</h5>
+<ul>
+    <% if @businesses.empty? %>
+        <li>None found.</li>
+    <% else %>
+        <% @businesses.each do |business| %>
+        <li><%= link_to business.name, business_path(business) %></li>
+        <% end %>
+    <% end %>
+</ul>
+<br>
+
+<h5>
+    Contractors in this neighbourhood: 
+</h5>
+<ul>
+    <% if @contractors.empty? %>
+        <li>None found.</li>
+    <% else %>
+        <% @contractors.each do |contractor| %>
+        <li><%= link_to contractor.name, contractor_path(contractor) %></li>
+        <% end %>
+    <% end %>
+</ul>
+<br>
 
 <div>
   <%= link_to "Edit this neighbourhood", edit_neighbourhood_path(@neighbourhood) %> |
