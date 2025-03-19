@@ -10,6 +10,7 @@
         <%= link_to "New hood", new_neighbourhood_path, class: "btn btn-dark" %>
     </div>
 </div>
+
 <table class="table table-striped" id="neighbourhoods">
     <thead>
         <tr>
@@ -18,13 +19,15 @@
         </tr>
     </thead>
     <tbody>
-    <% @neighbourhoods.each do |neighbourhood| %>
-        <tr>
-            <td><%= render neighbourhood %></td>
-            <td><%= link_to "Show Details", neighbourhood %></td>
-        </tr>
-    <% end %>
+    
+        <% @neighbourhoods.each do |neighbourhood| %>
+            <tr>
+                <td><%= render neighbourhood %></td>
+                <td><%= link_to "Show Details", neighbourhood %></td>
+            </tr>
+        <% end %>
+
   </tbody>
 </table>
 
-
+<div class="d-flex"><%= paginate @neighbourhoods %></div>

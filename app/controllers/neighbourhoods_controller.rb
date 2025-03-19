@@ -3,7 +3,7 @@ class NeighbourhoodsController < ApplicationController
 
   # GET /neighbourhoods or /neighbourhoods.json
   def index
-    @neighbourhoods = Neighbourhood.order(:name)
+    @neighbourhoods = Neighbourhood.order(:name).page(params[:page]).per(10)
   end
 
   # GET /neighbourhoods/1 or /neighbourhoods/1.json
