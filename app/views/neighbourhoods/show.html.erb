@@ -41,7 +41,7 @@
         <li>None found.</li>
     <% else %>
         <% @contractors.each do |contractor| %>
-        <li><%= link_to contractor.name, contractor_path(contractor) %></li>
+        <li><%= link_to contractor.full_name, contractor_path(contractor) %></li>
         <% end %>
     <% end %>
 </ul>

@@ -42,11 +42,28 @@ require 'faker'
 
 # puts "Seeded #{Contractor.count} contractors."
 
+# Assign contractors to random neighbourhoods
+
+# Contractor.find_each do |contractor|
+#   random_neighbourhoods = Neighbourhood.order("RANDOM()").limit(rand(1..1)) # Each contractor gets 1 to 3 random neighbourhoods
+#   contractor.neighbourhoods << random_neighbourhoods
+# end
+
+# puts "Assigned contractors to neighbourhoods."
+
+# # Assign contractors to random businesses
+# Contractor.find_each do |contractor|
+#   random_businesses = Business.order("RANDOM()").limit(rand(1..3)) # Each contractor gets 1 to 5 random businesses
+#   contractor.businesses << random_businesses
+# end
+
+# puts "Assigned contractors to businesses."
+
+
 # Business data
+# 50.times do
+#   neighbourhood = Neighbourhood.order("RANDOM()").first
+#   neighbourhood.businesses.create(name: Faker::Company.name)
+# end
 
-50.times do 
-  neighbourhood = Neighbourhood.order("RANDOM()").first
-  neighbourhood.businesses.create(name: Faker::Company.name)
-end
-
-puts "Seeded #{Business.count} businesses."
+# puts "Seeded #{Business.count} businesses."

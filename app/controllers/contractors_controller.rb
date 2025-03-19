@@ -8,6 +8,9 @@ class ContractorsController < ApplicationController
 
   # GET /contractors/1 or /contractors/1.json
   def show
+    @contractor = Contractor.find(params[:id])
+    @neighbourhoods = @contractor.neighbourhoods
+    @businesses = @contractor.businesses
   end
 
   # GET /contractors/new

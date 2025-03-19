@@ -1,6 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @contractor %>
+<h3><%= render @contractor %></h3>
+<p>Id: <%= @contractor.id %>  |  Created at: <%= @contractor.created_at %></p>
+
+<br>
+<h5>
+    Businesses this contractor works for: 
+</h5>
+<ul>
+    <% if @businesses.empty? %>
+        <li>Information not available publicly.</li>
+    <% else %>
+        <% @businesses.each do |business| %>
+        <li><%= link_to business.name, business_path(business) %></li>
+        <% end %>
+    <% end %>
+</ul>
+<br>
+
+<h5>
+    Neighbourhoods being serviced as an independent contractor: 
+</h5>
+<ul>
+    <% if @neighbourhoods.empty? %>
+        <li>Information not available publicly.</li>
+    <% else %>
+        <% @neighbourhoods.each do |neighbourhood| %>
+        <li><%= link_to neighbourhood.name, neighbourhood_path(neighbourhood) %></li>
+        <% end %>
+    <% end %>
+</ul>
+<br>
 
 <div>
   <%= link_to "Edit this contractor", edit_contractor_path(@contractor) %> |
