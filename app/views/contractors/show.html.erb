@@ -12,7 +12,7 @@
         <li>Information not available publicly.</li>
     <% else %>
         <% @businesses.each do |business| %>
-        <li><%= link_to business.name, business_path(business) %></li>
+        <li><%= link_to business.name, business_path(business) %> - Id: <%= business.id %> - Created at: <%= business.created_at %></li>
         <% end %>
     <% end %>
 </ul>
@@ -26,7 +26,7 @@
         <li>Information not available publicly.</li>
     <% else %>
         <% @neighbourhoods.each do |neighbourhood| %>
-        <li><%= link_to neighbourhood.name, neighbourhood_path(neighbourhood) %></li>
+        <li><%= link_to neighbourhood.name, neighbourhood_path(neighbourhood) %>  - Id: <%= neighbourhood.id %> - Created at: <%= neighbourhood.created_at %></li>
         <% end %>
     <% end %>
 </ul>
