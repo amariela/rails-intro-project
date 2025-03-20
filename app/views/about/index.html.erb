@@ -1,0 +1,80 @@
+<h1>About</h1>
+<h5>The following table describes the datasets used in the project.</h5>
+<div
+    class="table-responsive"
+>
+    <table
+        class="table table-striped"
+    >
+        <thead>
+            <tr>
+                <th scope="col">Dataset Origin</th>
+                <th scope="col">Description</th>
+                <th scope="col">Data Structure</th>
+                <th scope="col">Database Table Name</th>
+                <th scope="col">Database Columns</th>
+                <th scope="col">Relationship to other datasets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Neighbourhoods</td>
+                <td>Contains information about the different neighbourhoods in Winnipeg.</td>
+                <td>JSON</td>
+                <td>Neighbourhood</td>
+                <td>id (PK), name</td>
+                <td>A neighbourhood allows 1 or many licensed contractors.<br />
+                    A neighbourhood can have 1 or many parks.<br />
+                    A neighbourhood can have 1 or many businesses.<br />
+                </td>
+            </tr>
+            <tr>
+                <td>Parks and Open Space</td>
+                <td>Provides information about location of parks and open spaces in Winnipeg.</td>
+                <td>JSON</td>
+                <td>Park</td>
+                <td>id (PK),
+name,
+neighbourhood_id (FK)</td>
+                <td>A park can be located in 1 neighborhood.
+                </td>
+            </tr>
+            <tr>
+                <td>Licensed Contractors</td>
+                <td>This dataset lists licensed contractors in Winnipeg.</td>
+                <td>JSON</td>
+                <td>Contractor</td>
+                <td>id (PK),
+full_name</td>
+                <td>A licensed contractor can service 1 to many neighbourhoods. <br />
+A contractor can be employed by 1 or many businesses.
+                </td>
+            </tr>
+                        <tr>
+                <td>Faker</td>
+                <td>Faker can be used to generate fake resident information.</td>
+                <td>JSON</td>
+                <td>Business</td>
+                <td>id (PK),
+name,
+neighbourhood_id (FK)</td>
+                <td>A business can have 1 or many contractors. <br />
+A business can be located in 1 neighbourhood.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    <strong>One to Many</strong>
+    <p>Park - Neighbourhood</p>
+    <p>Business - Neighbourhood</p>
+</p>
+<br/>
+
+<p>
+    <strong>Many to Many</strong>
+    <p>Business - Contractor</p>
+    <p>Contractor - Neighbourhood</p>
+</p>
