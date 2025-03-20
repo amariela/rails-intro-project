@@ -23,9 +23,9 @@
                 <td>JSON</td>
                 <td>Neighbourhood</td>
                 <td>id (PK), name</td>
-                <td>A neighbourhood allows 1 or many licensed contractors.<br />
-                    A neighbourhood can have 1 or many parks.<br />
-                    A neighbourhood can have 1 or many businesses.<br />
+                <td>A neighbourhood allows 1 or many licensed contractors.
+                    A neighbourhood can have 1 or many parks.
+                    A neighbourhood can have 1 or many businesses.
                 </td>
             </tr>
             <tr>
@@ -46,7 +46,7 @@ neighbourhood_id (FK)</td>
                 <td>Contractor</td>
                 <td>id (PK),
 full_name</td>
-                <td>A licensed contractor can service 1 to many neighbourhoods. <br />
+                <td>A licensed contractor can service 1 to many neighbourhoods.
 A contractor can be employed by 1 or many businesses.
                 </td>
             </tr>
@@ -58,7 +58,7 @@ A contractor can be employed by 1 or many businesses.
                 <td>id (PK),
 name,
 neighbourhood_id (FK)</td>
-                <td>A business can have 1 or many contractors. <br />
+                <td>A business can have 1 or many contractors.
 A business can be located in 1 neighbourhood.
                 </td>
             </tr>
@@ -66,19 +66,21 @@ A business can be located in 1 neighbourhood.
     </table>
 </div>
 
-<p>
-    <strong>One to Many</strong>
-    <p>Park - Neighbourhood</p>
-    <p>Business - Neighbourhood</p>
-</p>
-<br/>
 
-<p>
-    <strong>Many to Many</strong>
-    <p>Business - Contractor</p>
-    <p>Contractor - Neighbourhood</p>
-</p>
+<strong>One to Many</strong>
+<p>Park - Neighbourhood</p>
+<p>Business - Neighbourhood</p>
 
-<hr /   >
-<h5>Entity Relationship Diagram</h5>
-<p><%= image_tag "erd.png" %></p>
+
+
+
+<strong>Many to Many</strong>
+<p>Business - Contractor</p>
+<p>Contractor - Neighbourhood</p>
+
+
+
+<div id="erd" class="pt-3">
+    <h5>Entity Relationship Diagram</h5>
+    <p><%= image_tag "erd.png", alt:"entity relationship diagram" %></p>
+</div>
